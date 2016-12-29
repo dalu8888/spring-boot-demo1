@@ -14,6 +14,7 @@ import java.util.List;
  * Created by asus on 2016/12/22.
  */
 @Controller
+@RequestMapping("/user")
 public class UserController {
     private Logger logger = Logger.getLogger(UserController.class);
 
