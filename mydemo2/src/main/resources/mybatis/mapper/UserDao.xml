@@ -5,9 +5,20 @@
     <!--<select id="findUserInfo" resultType="com.smart.model.User">-->
         <!--select name, age,password from user;对实体类进行映射配置-->
     <!--</select>-->
+    <parameterMap type="com.smart.org.model.User" id="parameterMapUser">
+        <!--<parameter property="id"/>-->
+        <parameter property="id"/>
+        <parameter property="name"/>
+        <parameter property="age"/>
+        <parameter property="password"/>
+    </parameterMap>
 
     <select id="findUserInfo" resultType="com.smart.org.model.User">
         select * from user where id=1;
+    </select>
+
+    <select id="getAllUsers" resultType="parameterMapUser">
+        select * from user;
     </select>
 
 </mapper>

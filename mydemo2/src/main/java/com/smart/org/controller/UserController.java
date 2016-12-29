@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * Created by asus on 2016/12/22.
  */
@@ -32,6 +34,17 @@ public class UserController {
             logger.info("user.getAge():"+user.getAge());
         }
         return user;
+    }
+
+
+    /*
+     *  http://localhost:8080/getAllUsers
+     */
+    @RequestMapping("/getAllUsers")
+    @ResponseBody
+    public List<User> getAllUsers() {
+        List<User> users=userService.getAllUsers();
+        return users;
     }
 
 }
