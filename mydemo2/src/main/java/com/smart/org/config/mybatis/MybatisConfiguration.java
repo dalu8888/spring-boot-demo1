@@ -63,11 +63,11 @@ public class MybatisConfiguration implements TransactionManagementConfigurer {
 
             Resource[] resources = new PathMatchingResourcePatternResolver()
                     .getResources(mapperLocations);
-            System.out.println("--------------"+mapperLocations);
+//            System.out.println("--------------"+mapperLocations);
             sessionFactoryBean.setMapperLocations(resources);
             sessionFactoryBean.setConfigLocation(
                     new DefaultResourceLoader().getResource(configLocation));
-            System.out.println("==============sqlSessionFactory初始化==================");
+//            System.out.println("==============sqlSessionFactory初始化==================");
 
             return sessionFactoryBean.getObject();
         } catch (IOException e) {

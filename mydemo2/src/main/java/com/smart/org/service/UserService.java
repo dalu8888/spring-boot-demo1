@@ -20,6 +20,10 @@ public class UserService {
         return userDao.findUserInfo();
     }
 
+    public User getUserInfo2() {
+        return userDao.findUserInfo2();
+    }
+
     public List<User> getAllUsers(){
         return userDao.getAllUsers();
     }

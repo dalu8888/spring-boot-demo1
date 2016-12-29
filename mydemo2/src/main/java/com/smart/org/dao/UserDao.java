@@ -12,5 +12,7 @@ public interface UserDao {
 
     public User findUserInfo();
 
+    public User findUserInfo2();
+
     public List<User> getAllUsers();
 }

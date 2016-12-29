@@ -36,6 +36,18 @@ public class UserController {
         return user;
     }
 
+    @RequestMapping("/getUserInfo2")
+    @ResponseBody
+    public User getUserInfo2() {
+        User user = userService.getUserInfo2();
+        if(user!=null){
+//            System.out.println("user.getId():"+user.getId().toString());
+            System.out.println("user.getName():"+user.getName());
+            logger.info("user.getAge():"+user.getAge());
+        }
+        return user;
+    }
+
 
     /*
      *  http://localhost:8080/getAllUsers
