@@ -5,6 +5,7 @@ import com.smart.org.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -14,7 +15,6 @@ import java.util.List;
  * Created by asus on 2016/12/22.
  */
 @Controller
-@RequestMapping("/user")
 public class UserController {
     private Logger logger = Logger.getLogger(UserController.class);
 
@@ -53,11 +53,19 @@ public class UserController {
     /*
      *  http://localhost:8080/getAllUsers
      */
-    @RequestMapping("/getAllUsers")
-    @ResponseBody
-    public List<User> getAllUsers() {
+//    @RequestMapping("/getAllUsers")
+//    @ResponseBody
+//    @GetMapping
+//    public ModelAndView getAllUsers(Model model) {
+//        List<User> users=userService.getAllUsers();
+//        return new ModelAndView("/list", "users", users);
+//    }
+
+    @RequestMapping("/")
+    public String list(Model model) {
         List<User> users=userService.getAllUsers();
-        return users;
+        model.addAttribute("users",users);
+        return "list";
     }
 
 }
